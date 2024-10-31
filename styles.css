@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Móvil: 1 columna */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .image-container {
+    height: 300px; /* Ajusta la altura para móvil */
+  }
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image-container {
+    height: 350px; /* Ajusta la altura para tablet */
+  }
+}
+
+/* Desktop: 3 columnas */
+@media (min-width: 1025px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .image-container {
+    height: 400px; /* Ajusta la altura para desktop */
+  }
+}
+
+.image-container {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery img {
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen al tamaño del contenedor sin distorsión */
+  width: 100%;
+}
+
+.select-btn {
+  background-color: #ff4081;
+  border: none;
+  border-radius: 5px;
+  bottom: 45px; /* Ajusta la posición para no interferir con el nuevo botón */
+  color: #fff;
+  cursor: pointer;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.view-btn {
+  background-color: #2196f3; /* Color del botón "Ver" */
+  border: none;
+  border-radius: 5px;
+  bottom: 5px; /* Ajusta la posición del botón "Ver" */
+  color: #fff;
+  cursor: pointer;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.selected img {
+  border: 2px solid #ff4081;
+  opacity: 0.6;
+}
+
+.selected .select-btn {
+  background-color: #4caf50;
+  padding: 10px;
+}
+
+/* Estilos para el modal */
+.modal {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+  display: none; /* Ocultar el modal por defecto */
+  height: 100%; /* Alto completo */
+  left: 0;
+  overflow: auto; /* Habilitar scroll si es necesario */
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  z-index: 1; /* Queda por encima de todo */
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 700px; /* Ancho máximo */
+  width: 80%; /* Ancho de la imagen en el modal */
+}
+
+.close {
+  color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: 35px;
+  top: 15px;
+}
+
+#caption {
+  color: #ccc;
+  margin: auto;
+  padding: 10px 20px;
+  text-align: center;
+}
