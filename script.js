@@ -129,5 +129,26 @@ $(document).ready(function () {
       $("#resultadoValor").text(resultado);
       $("#explicacionRegla").html(explicacion);
     });
+    // Limpiar los campos
+    $("#limpiarCampos").click(function () {
+      // Limpiar los campos de entrada
+      $("#valorA").val("");
+      $("#valorB").val("");
+      $("#valorC").val("");
+      $("#valorDesconocido").val("X");
+
+      // Limpiar los resultados
+      $("#resultadoValor").text("");
+      $("#explicacionRegla").html("");
+    });
+    $("#limpiarMCDMCM").click(function () {
+      // Limpiar los campos de números de MCD y MCM
+      $(".number-input").val("");
+
+      // Limpiar los resultados de MCD y MCM
+      $("#resultadoMCD").text("");
+      $("#resultadoMCM").text("");
+      $("#explicacion").html("");
+    });
   });
 });

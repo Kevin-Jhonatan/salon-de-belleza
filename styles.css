@@ -89,3 +89,13 @@ label {
   font-weight: bold;
   margin-top: 20px;
 }
+#limpiarCampos,
+#limpiarMCDMCM {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+#limpiarCampos:hover,
+#limpiarMCDMCM:hover {
+  background-color: #c82333;
+}
