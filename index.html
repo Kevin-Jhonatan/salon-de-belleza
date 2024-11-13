@@ -1,93 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Avanzada de MCD, MCM y Regla de Tres</title>
     <link rel="stylesheet" href="styles.css" />
-    <title>Salón de Belleza</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="gallery">
-      <div class="image-container">
-        <img src="assets/1.jpeg" alt="Imagen 1" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
+    <h2>Calculadora Avanzada de MCD, MCM y Regla de Tres</h2>
+
+    <!-- Sección para MCD y MCM -->
+    <div class="container">
+      <h3>Calculadora de MCD y MCM para Múltiples Números</h3>
+
+      <div id="inputContainer">
+        <input type="number" class="number-input" placeholder="Número 1" />
+        <input type="number" class="number-input" placeholder="Número 2" />
       </div>
-      <div class="image-container">
-        <img src="assets/2.jpeg" alt="Imagen 2" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/4.jpeg" alt="Imagen 3" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/5.jpeg" alt="Imagen 4" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/6.jpeg" alt="Imagen 5" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/7.jpeg" alt="Imagen 6" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/8.jpeg" alt="Imagen 7" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/9.jpeg" alt="Imagen 8" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/10.jpeg" alt="Imagen 9" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/11.jpeg" alt="Imagen 10" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/12.jpeg" alt="Imagen 11" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/13.jpeg" alt="Imagen 12" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/14.jpeg" alt="Imagen 13" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/15.jpeg" alt="Imagen 14" />
-        <button class="select-btn">Escoger</button>
-        <button class="view-btn">Ver</button>
+
+      <button id="addNumber">Agregar otro número</button>
+      <button id="calcularMCDMCM">Calcular MCD y MCM</button>
+
+      <div id="resultados">
+        <p>MCD: <span id="resultadoMCD" class="result"></span></p>
+        <p>MCM: <span id="resultadoMCM" class="result"></span></p>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal" id="imageModal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modalImage" />
-      <div id="caption"></div>
+    <div class="container">
+      <h3>Explicación Detallada del Cálculo (MCD, MCM)</h3>
+      <div id="explicacion"></div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Sección para Regla de Tres -->
+    <div class="container">
+      <h3>Calculadora de Regla de Tres Simple</h3>
+
+      <form id="formReglaTres">
+        <label for="valorA">Valor A (número de obreros, días, etc.):</label>
+        <input
+          type="number"
+          id="valorA"
+          class="input-regla"
+          placeholder="Valor A"
+          required
+          step="any"
+        />
+
+        <label for="valorB">Valor B (lo que corresponde a A):</label>
+        <input
+          type="number"
+          id="valorB"
+          class="input-regla"
+          placeholder="Valor B"
+          required
+          step="any"
+        />
+
+        <label for="valorC">Valor C (lo que corresponde a B):</label>
+        <input
+          type="number"
+          id="valorC"
+          class="input-regla"
+          placeholder="Valor C"
+          required
+          step="any"
+        />
+
+        <label for="valorDesconocido">Selecciona el valor desconocido:</label>
+        <select id="valorDesconocido">
+          <option value="X">X</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+
+        <button type="submit" id="calcularRegla">Calcular Regla de Tres</button>
+      </form>
+
+      <div id="resultadoRegla">
+        <p><strong>Resultado:</strong> <span id="resultadoValor"></span></p>
+      </div>
+
+      <div id="explicacionRegla"></div>
+    </div>
   </body>
 </html>
