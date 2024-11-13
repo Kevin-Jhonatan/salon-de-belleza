@@ -1,48 +1,33 @@
+/* Estilos para el cuerpo y la estructura general */
 body {
+  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
   margin: auto;
   max-width: 800px;
   padding: 20px;
-  background-color: #f4f4f4;
 }
 
-h2 {
-  color: #333;
+h2,
+h3 {
   text-align: center;
 }
 
 .container {
   background-color: white;
   border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
   padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.result {
-  color: #005b96;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.number-input,
-.input-regla {
-  margin-right: 10px;
-  margin-top: 5px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 120px;
 }
 
 button {
-  padding: 10px;
   background-color: #005b96;
-  color: white;
   border: none;
   border-radius: 4px;
+  color: white;
   cursor: pointer;
   margin-top: 10px;
+  padding: 10px;
 }
 
 button:hover {
@@ -53,18 +38,54 @@ button:disabled {
   background-color: #ccc;
 }
 
-#inputContainer {
+/* Estilos para las filas y columnas */
+.row {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 15px;
 }
 
-#addNumber {
-  background-color: #28a745;
+.col {
+  flex: 1;
+  margin-right: 10px;
 }
 
-#addNumber:hover {
-  background-color: #218838;
+.col:last-child {
+  margin-right: 0;
 }
 
-#resultados {
+.input-regla {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+}
+
+select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Ajustes para los títulos */
+label {
+  font-weight: bold;
+}
+
+#explicacionRegla {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+#resultadoRegla {
+  color: #005b96;
+  font-size: 18px;
+  font-weight: bold;
   margin-top: 20px;
 }

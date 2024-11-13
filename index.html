@@ -34,48 +34,55 @@
       <div id="explicacion"></div>
     </div>
 
-    <!-- Sección para Regla de Tres -->
     <div class="container">
       <h3>Calculadora de Regla de Tres Simple</h3>
-
       <form id="formReglaTres">
-        <label for="valorA">Valor A (número de obreros, días, etc.):</label>
-        <input
-          type="number"
-          id="valorA"
-          class="input-regla"
-          placeholder="Valor A"
-          required
-          step="any"
-        />
+        <!-- Fila 1: Distancia (A) y Tiempo (B) -->
+        <div class="row">
+          <div class="col">
+            <label for="valorA">Distancia</label>
+            <input
+              type="number"
+              id="valorA"
+              class="input-regla"
+              placeholder="Valor A"
+              required
+              step="any"
+            />
+          </div>
+          <div class="col">
+            <label for="valorB">Tiempo</label>
+            <input
+              type="number"
+              id="valorB"
+              class="input-regla"
+              placeholder="Valor B"
+              required
+              step="any"
+            />
+          </div>
+        </div>
 
-        <label for="valorB">Valor B (lo que corresponde a A):</label>
-        <input
-          type="number"
-          id="valorB"
-          class="input-regla"
-          placeholder="Valor B"
-          required
-          step="any"
-        />
+        <!-- Fila 2: Valor C y selección de valor desconocido -->
+        <div class="row">
+          <div class="col">
+            <input
+              type="number"
+              id="valorC"
+              class="input-regla"
+              placeholder="Valor C"
+              required
+              step="any"
+            />
+          </div>
+          <div class="col">
+            <select id="valorDesconocido">
+              <option value="X">X</option>
+            </select>
+          </div>
+        </div>
 
-        <label for="valorC">Valor C (lo que corresponde a B):</label>
-        <input
-          type="number"
-          id="valorC"
-          class="input-regla"
-          placeholder="Valor C"
-          required
-          step="any"
-        />
-
-        <label for="valorDesconocido">Selecciona el valor desconocido:</label>
-        <select id="valorDesconocido">
-          <option value="X">X</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-        </select>
-
+        <!-- Botón para calcular -->
         <button type="submit" id="calcularRegla">Calcular Regla de Tres</button>
       </form>
 
